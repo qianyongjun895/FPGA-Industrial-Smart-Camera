@@ -1,0 +1,31 @@
+#ifndef FPGA_GLOBAL_H
+#define FPGA_GLOBAL_H
+
+#include "AcceCommon.h"
+#include "AreaSelect.h"
+#include "Binary.h"
+#include "BwProcess.h"
+#include "Capture.h"
+#include "ColorExtract.h"
+#include "ContrastEnhancement.h"
+#include "ContrastTransfer.h"
+#include "CurveFitting.h"
+#include "Defect.h"
+#include "ErosionDilationA.h"
+#include "ErosionDilationB.h"
+#include "FpgaReg.h"
+#include "Gauss.h"
+#include "Histogram.h"
+#include "Link.h"
+#include "PeakA.h"
+#include "PeakB.h"
+#include "Preprocess.h"
+#include "Shading.h"
+#include "Sharpness.h"
+#include "SideChoose.h"
+#include "SideExtract.h"
+#include "SkeletonExtract.h"
+#include "System.h"
+#include "VgaDisplay.h"
+
+#endif // FPGA_GLOBAL_H

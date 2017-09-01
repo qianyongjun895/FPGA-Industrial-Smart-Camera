@@ -1,0 +1,16 @@
+---- imlib_read_geometry Matches (3 in 2 files) ----
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):bool imlib_read_geometry(FIL *fp, image_t *img, const char *path, img_read_settings_t *rs)
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):        bool vflipped = imlib_read_geometry(&fp, &temp, path, &rs);
+imlib.h (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3\include):bool imlib_read_geometry(FIL *fp, image_t *img, const char *path, img_read_settings_t *rs);
+---- imlib_image_operation Matches (11 in 2 files) ----
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):void imlib_image_operation(image_t *img, const char *path, image_t *other, line_op_t op)
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_and_line_op);
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_nand_line_op);
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_or_line_op);
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_nor_line_op);
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_xor_line_op);
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_xnor_line_op);
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_difference_line_op);
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_replace_line_op);
+imlib.c (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3):    imlib_image_operation(img, path, other, imlib_blend_line_op);
+imlib.h (I:\Inferno\trunk\src\algorithm\third_party\openmv2_3\include):void imlib_image_operation(image_t *img, const char *path, image_t *other, line_op_t op);

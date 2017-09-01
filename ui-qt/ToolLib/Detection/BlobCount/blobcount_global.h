@@ -1,0 +1,12 @@
+#ifndef BLOBCOUNT_GLOBAL_H
+#define BLOBCOUNT_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(BLOBCOUNT_LIBRARY)
+#  define BLOBCOUNTSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define BLOBCOUNTSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // BLOBCOUNT_GLOBAL_H

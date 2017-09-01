@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RunOsdStyleItem</class>
+ <widget class="QWidget" name="RunOsdStyleItem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>377</width>
+    <height>60</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QCheckBox" name="checkBoxTaskName">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>10</y>
+     <width>141</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>1.直线定位</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxListOK">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>10</y>
+     <width>111</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>OK显示ROI</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxListNG">
+   <property name="geometry">
+    <rect>
+     <x>264</x>
+     <y>10</y>
+     <width>111</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>NG显示ROI</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

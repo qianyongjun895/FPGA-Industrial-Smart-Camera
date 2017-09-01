@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/Tasktool">
+        <file>CellFx.ico</file>
+        <file>detection.png</file>
+        <file>logic.png</file>
+        <file>match.png</file>
+        <file>measure.png</file>
+    </qresource>
+    <qresource prefix="/Button">
+        <file>../Icons/button.qrc</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Delay_root>
+  <TaskResultNode>
+    <Delay_Node ResultName="错误码">
+      <Result_ID>0</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>FALSE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_UINT</result_type>
+    </Delay_Node>
+    <Delay_Node ResultName="延时时间(ms)">
+      <Result_ID>1</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>FALSE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_FLT</result_type>
+    </Delay_Node>
+  </TaskResultNode>
+   <TaskExplainNode>在指定步骤进行延时等待。</TaskExplainNode>
+</Delay_root>

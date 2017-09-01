@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ListWidgetIOOutputItem</class>
+ <widget class="QWidget" name="ListWidgetIOOutputItem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>791</width>
+    <height>43</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="TaskNamelabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>5</y>
+     <width>130</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="OKIOOutputProtEdit">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>5</y>
+     <width>110</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="NGIOOutputProtEdit">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>5</y>
+     <width>110</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

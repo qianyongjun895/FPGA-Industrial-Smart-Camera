@@ -1,0 +1,11 @@
+prefix=/home/gezhihua/tanghao_Tool/libdmtx/_install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libdmtx
+URL: http://www.libdmtx.org/
+Description: Library for reading and writing Data Matrix barcodes
+Version: 0.7.5
+Libs: -L${libdir} -ldmtx
+Cflags: -I${includedir}

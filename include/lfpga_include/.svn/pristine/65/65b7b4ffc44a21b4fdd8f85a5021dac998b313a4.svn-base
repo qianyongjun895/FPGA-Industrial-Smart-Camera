@@ -1,0 +1,1128 @@
+#ifndef ACCECOMMON_H
+#define ACCECOMMON_H
+
+#include "define.h"
+#include "BaseStruct.h"
+#include "roi.h"
+
+/** 加速器模块输出结果类型 Start */
+/** CPT模块输出结果类型宏定义 */
+#define ACCE_CPT_COLOR_ADDR     0
+#define ACCE_CPT_MONO_ADDR      1
+
+/** 边沿提取模块输出结果类型宏定义 */
+#define ACCE_EDGE_EXTRACT_POINT_ADDR            0
+#define ACCE_EDGE_EXTRACT_PIC_ADDR              1
+#define ACCE_EDGE_EXTRACT_POINT_BACKUP_ADDR     2
+
+/** 区域筛选模块输出结果类型宏定义 */
+#define ACCE_AREA_SELECT_COLOR_ADDR     0
+#define ACCE_AREA_SELECT_MONO_ADDR      1
+/** 加速器模块输出结果类型 End */
+
+
+/** 图像加速器定义 */
+#define ACCE_CPT_MODEL_ID				0			///< 抓图模块
+#define ACCE_BLUR_MODEL_ID				1			///< 模糊处理
+#define ACCE_GAUSS_FILTER_ID		    2			///< 5*5卷积(高斯)滤波模块
+#define ACCE_BALANCE_MODEL_ID			3			///< 均衡直方图模块
+#define ACCE_CONTRAST_MODEL_ID			4			///< 对比度转换模块
+#define ACCE_SHARPNESS_MODEL_ID         5			///< 边缘强调模块
+#define ACCE_PEAK_FILTER_A_MODEL_ID     6			///< 原图腐蚀膨胀A模块
+#define ACCE_PEAK_FILTER_B_MODEL_ID     7			///< 原图腐蚀膨胀B模块
+#define ACCE_DEFECT_MODEL_ID            8           ///< 缺陷提取模块
+#define ACCE_SHADING_MODEL_ID		    9			///< 实时浓淡补正模块
+#define ACCE_PRE_MODEL_ID			    17			///< 图像预处理转换模块
+#define ACCE_VGA_MODEL_ID				31			///< VGA模块
+#define ACCE_BW_PROC_MODEL_ID			32			///< 二值化处理模块
+#define ACCE_BW_MODEL_ID				33			///< 二值化
+#define ACCE_EROSION_DILATE_MODEL1_ID	34			///< 腐蚀膨胀A
+#define ACCE_EROSION_DILATE_MODEL2_ID	35			///< 腐蚀膨胀B
+#define ACCE_SKE_MATCH_MODLE_ID			36			///< 轮廓匹配
+#define ACCE_EDGE_EXTRACT_MODLE_ID		37			///< 边沿提取
+#define ACCE_SIDE_CHOOSE_MODEL_ID		38			///< 边沿筛选
+#define ACCE_CURVE_FITTING_MODLE_ID		39			///< 曲线拟合
+#define ACCE_CONNECT_REGION_MODLE_ID	40			///< 连通域
+#define ACCE_COLOR_EXTRACT_MODLE_ID		41			///< 色彩提取
+#define ACCE_AREA_SELECT_MODEL_ID		42			///< 区域筛选
+#define ACCE_HIST_MODEL_ID              43          ///< 直方图统计
+
+#define ACCE_CPT_MODEL_VERSION				    201         ///< 抓图模块
+#define ACCE_BLUR_MODEL_VERSION				    201         ///< 模糊处理模块
+#define ACCE_GAUSS_FILTER_VERSION		        201			///< 5*5卷积(高斯)滤波模块
+#define ACCE_BALANCE_MODEL_VERSION			    201			///< 均衡直方图模块
+#define ACCE_CONTRAST_MODEL_VERSION			    201			///< 对比度转换模块
+#define ACCE_DEFECT_MODEL_VERSION               201         ///< 缺陷提取模块版本号
+#define ACCE_SHADING_MODEL_VERSION              201			///< 实时浓淡补正模块版本号
+#define ACCE_PRE_MODEL_VERSION			        201			///< 图像预处理转换模块
+#define ACCE_SHARPNESS_MODEL_VERSION            201			///< 边缘强调模块
+#define ACCE_PEAK_FILTER_A_MODEL_VERSION        201			///< 原图腐蚀膨胀A模块
+#define ACCE_PEAK_FILTER_B_MODEL_VERSION        201			///< 原图腐蚀膨胀B模块
+#define ACCE_VGA_MODEL_VERSION				    201			///< VGA模块
+#define ACCE_BW_PROC_MODEL_VERSION			    201			///< 二值化处理模块
+#define ACCE_BW_MODEL_VERSION				    201			///< 二值化
+#define ACCE_EROSION_DILATE_MODEL1_VERSION	    201			///< 腐蚀膨胀A
+#define ACCE_EROSION_DILATE_MODEL2_VERSION	    201			///< 腐蚀膨胀B
+#define ACCE_SKE_MATCH_MODLE_VERSION			201			///< 轮廓匹配
+#define ACCE_EDGE_EXTRACT_MODLE_VERSION		    201			///< 边沿提取
+#define ACCE_SIDE_CHOOSE_MODEL_VERSION		    201			///< 边沿筛选
+#define ACCE_CURVE_FITTING_MODLE_VERSION		201			///< 曲线拟合
+#define ACCE_CONNECT_REGION_MODLE_VERSION	    201			///< 连通域
+#define ACCE_COLOR_EXTRACT_MODLE_VERSION		201			///< 色彩提取
+#define ACCE_AREA_SELECT_MODEL_VERSION		    201			///< 区域筛选
+#define ACCE_HIST_MODEL_VERSION                 201         ///< 直方图统计
+
+
+#define ACCE_MODEL_STEP_SIZE        0x4000          ///< 每步任务的加速器模块的空间大小
+
+
+#define ACCELERATOR_PARAM_BASE_ADDR		0x13600000	///< 加速器模块参数保存地址
+#define ACCELERATOR_PARAM_MEM_SIZE		0x400000	///< 加速器模块参数占用内存的总大小
+#define	ACCELERATOR_MODEL_NUM			64			///< 加速器模块的数量
+#define ACCELERATOR_ARRAY_SIZE			256			///< 每个加速器的数组大小
+
+#define ACCELERATOR_MAX		64      ///< 加速器个数
+
+#define IO_OUTPUT_CONFIG_MAX 256
+
+#define MODEL_COLOR_PIC_OUTPUT_ADDR		0x1
+#define MODEL_MONO_PIC_OUTPUT_ADDR		0x2
+#define SRC_PIC_WIDTH_HEIGHT			0x3
+
+/** 区域选择模板类型 */
+#define OCTAGON_TYPE 1
+#define RING_TYPE    2
+#define RECT_TYPE    3
+
+/** 腐蚀膨胀模板类型 */
+#define ED_MODEL_TYPE_3x3       3
+#define ED_MODEL_TYPE_5x5       5
+#define ED_MODEL_TYPE_7x7       7
+#define ED_MODEL_TYPE_9x9       9
+#define ED_MODEL_TYPE_11x11     11
+#define ED_MODEL_TYPE_13x13     13
+
+#define ED_MODEL_MASK_3x3       7
+#define ED_MODEL_MASK_5x5       31
+#define ED_MODEL_MASK_7x7       127
+#define ED_MODEL_MASK_9x9       511
+#define ED_MODEL_MASK_11x11     2047
+#define ED_MODEL_MASK_13x13     8191
+
+
+/** 腐蚀膨胀模式选择 */
+#define ED_MODE_DILATE      0   ///< 膨胀
+#define ED_MODE_ERODE       1   ///< 腐蚀
+
+/** 输出图像标志 */
+#define OUTPUT_IMAGE        0   ///< 输出图像
+#define OUTPUT_POINT        1   ///< 输出数据
+
+/** 加速器模块执行标志 */
+#define EXECUTE_ACCE_MODEL      0   ///< 执行加速器模块
+#define NOT_EXECUTE_ACCE_MODEL  1   ///< 不执行加速器模块
+
+/** 高斯模式选择 */
+#define GAUSS_KERNEL_MODE_5x5       0
+#define GAUSS_KERNEL_MODE_3x5       1
+#define GAUSS_KERNEL_MODE_5x3       2
+
+/** 实时浓淡补正 */
+#define ZOOM_FILTER_ZOOM_MODE_1_1   0
+#define ZOOM_FILTER_ZOOM_MODE_1_2   1
+#define ZOOM_FILTER_ZOOM_MODE_1_4   2
+#define ZOOM_FILTER_ZOOM_MODE_1_8   3
+#define ZOOM_FILTER_ZOOM_MODE_1_16  4
+
+#define ZOOM_FILTER_DIFF_MODE_ORIGINAL  0
+#define ZOOM_FILTER_DIFF_MODE_ZOOM      1
+#define ZOOM_FILTER_DIFF_MODE_DIFF      2
+
+/** 均衡模块最大段数 */
+#define BALANCE_COEF_POINT_MAX_NUM 16
+
+#define PIC_SRC_CMOS		0x0
+#define PIC_SRC_DDRA		0x1
+#define PIC_SRC_DDRB		0x2
+
+#define MAX_AREA_NUM 2000
+
+typedef struct
+{
+    unsigned int param;
+    unsigned int mask;
+    unsigned int offset;
+}FPGA_REG_PARAM;
+
+
+typedef struct {
+    s16 vertex_x;
+    s16 vertex_y;
+}VERTEX_POINT;
+
+typedef struct {
+    u16 center_x;				///< 圆环中心坐标X
+    u16 center_y;				///< 圆环中心坐标Y
+    u32 inner_radius_square;	///< 内环半径平方
+    u32 outer_radius_square;	///< 外环半径平方
+}CIRCULAR;
+
+typedef struct {
+    u8 octagon_vertex_en;               ///< 8个顶点的使能
+    u8 octagon_inv_flag;                ///< 多边形内外取反标志
+    u8 octagon_index;                   ///< 八边形索引
+    u8 pad;                             ///< 对齐
+    VERTEX_POINT octagon_vertexs[8];	///< 第0个八边形顶点坐标
+}OCTAGON_CFG_PARA;
+
+typedef struct {
+    u8 ring_en_flag;		///< 环使能标志位
+    u8 ring_inv_flag;		///< 内外取反的标志位
+    u8 ring_index;			///< 环索引
+    u8 pad;			        ///< 对齐
+    CIRCULAR ring;			///< 环的参数
+}RING_CFG_PARA;
+
+
+typedef struct {
+    u32 valid_flag;                     ///< 参数有效标志
+    OCTAGON_CFG_PARA octagons_cfg[4];	///< 八边形配置
+    RING_CFG_PARA ring_cfg[4];          ///< 环形配置
+    u8 select_model[8];                 ///< 选择模板顺序记录 1:多边形 2:圆环 3:矩形
+}SELECT_AREA_PARAM;
+
+typedef struct {
+    u32 balance_point_num;     ///< 均衡系数点的个数
+    POINT_I balance_point[BALANCE_COEF_POINT_MAX_NUM];    ///< 均衡系数
+}BALANCE_POINT_INFO;
+
+typedef struct {
+    u16 roi_start_x;        ///< ROI起始 x 地址
+    u16 roi_start_y;        ///< ROI起始 y 地址
+    u16 roi_width;          ///< ROI长度
+    u16 roi_height;         ///< ROI高度
+}CPT_ROI_PARAM;
+
+/*----------------------------------------------*
+ * 预处理模块结构体                              *
+ *----------------------------------------------*/
+
+/** CPT模块（0）的配置信息 */
+typedef struct {
+    u32 model_version;              ///< 模块的版本号
+    u8 model_enable;                ///< 模块使能标志
+    u8 roi_model_en;                ///< ROI模式使能
+    u8 mono_pic_wr_ddr_en;          ///< 使能黑白图像写入DDR功能
+    u8 color_pic_wr_ddr_en;         ///< 使能彩色图像写入DDR功能
+    u8 mono_en;                     ///< 获取的是黑白，彩色； 1=黑白； 0=彩色
+    u8 pic_src_sel;                 /** 图像源选择 0:CMOS 1:DDR_A 2:|CMOS-DDR_A| 3:|DDR_A-DDR_B|
+                                        有效值为0、1、2；当为模式2时，只有灰度做差分运算，彩色信息保持CMOS的原始数据 */
+    u8 pic_channel;                 ///< 彩色相机灰度通道选择 (黑白相机下不起作用)  0:亮度通道，1:R通道，2:G通道，3:B通道
+    u8 pad;                         ///< 对齐
+    u32 ddr_src_a_addr;             ///< 从DDR中获取图像时：DDR_A端口图像地址
+    u32 ddr_src_b_addr;             ///< 从DDR中获取图像时：DDR_B端口图像地址
+    u32 mono_pic_save_addr;         ///< 黑白图像保存地址
+    u32 color_pic_save_addr;        ///< 彩色图像保存地址
+    CPT_ROI_PARAM ddr_src_a_roi;    ///< DDR A的ROI参数
+    CPT_ROI_PARAM ddr_src_b_roi;    ///< DDR B的ROI参数
+}CPT_MODEL_CFG;
+
+
+/** 高斯滤波模块（P1）的配置信息 */
+typedef struct {
+    u32 model_version;          ///< 模块的版本号
+    u8 model_enable;            ///< 模块使能标志
+    u8 blur_mode_sel;           ///< 模糊处理模式选择，有效值为1~9
+    u8 pad[2];				    ///< 对齐
+}BLUR_MODEL_CFG;
+
+
+/** 高斯滤波模块（P2）的配置信息 */
+typedef struct {
+    u32 model_version;          ///< 模块的版本号
+    u8 model_enable;            ///< 模块使能标志
+    u8 pad1[3];				    ///< 对齐
+    f32 sigma;				    ///< 0.01~10.0，默认值0.65
+    u16 gauss_kernel[5];	    ///< 高斯核
+    u8 pad2[2];				    ///< 对齐
+}GAUSS_MODEL_CFG;
+
+
+/** 均衡模块(对比度增强)（P3）的配置信息 */
+typedef struct {
+    u32 model_version;                      ///< 模块的版本号
+    u8 model_enable;                        ///< 模块使能标志
+    u8 hist_stat_sel;                       ///< 直方图统计源选择，0为直方图均衡之前的数据，1为均衡之后的数据
+    u8 manual_set_en;                       ///< 手动设置参数使能
+    u8 pad;                                 ///< 对齐
+    u8 balance_lut[256];                    ///< 均衡快速查找表
+    BALANCE_POINT_INFO balance_point_info;  ///< 均衡系统信息
+}BALANCE_MODEL_CFG;
+
+
+/** 对比度转换（P4）的配置信息 */
+typedef struct {
+    u32 model_version;          ///< 模块的版本号
+    u8 model_enable;            ///< 模块使能标志
+    u8 ct_gain;                 ///< 对比度转换强度，有效值为0~255
+    u8 ct_median_gray;          ///< 对比度转换偏移，有效值为0~255
+    u8 pad;				        ///< 对齐
+}CT_MODEL_CFG;
+
+
+/** 边缘强调（P5）的配置信息 */
+typedef struct {
+    u32 model_version;          ///< 模块的版本号
+    u8 model_enable;            ///< 模块使能标志
+    u8 sharpness_level;         ///< 边缘强调强度，有效值为0~63
+    u8 pad[2];				    ///< 对齐
+}SHARPNESS_MODEL_CFG;
+
+
+/** 原图腐蚀膨胀A（P6）的配置信息 */
+typedef struct {
+    u32 model_version;          ///< 模块的版本号
+    u8 model_enable;            ///< 模块使能标志
+    u8 peak_A_mode;             ///< 原图腐蚀膨胀A模式选择
+    u8 peak_A_loop_num;         ///< 原图腐蚀膨胀A循环次数
+    u8 pad;                     ///< 对齐
+}PEAK_A_MODEL_CFG;
+
+
+/** 原图腐蚀膨胀B（P6）的配置信息 */
+typedef struct {
+    u32 model_version;          ///< 模块的版本号
+    u8 model_enable;            ///< 模块使能标志
+    u8 peak_B_mode;             ///< 原图腐蚀膨胀B模式选择
+    u8 peak_B_loop_num;         ///< 原图腐蚀膨胀B循环次数
+    u8 pad;                     ///< 对齐
+}PEAK_B_MODEL_CFG;
+
+/** 缺陷提取模块（P15）的配置信息 */
+typedef struct {
+    u32 model_version;			///< 模块的版本号
+    u8 model_enable;			///< 模块使能标志
+    u8 defect_wr_ddr_en;		///< 写入DDR使能
+    u8 ref_value;				///< 缺陷提取基准值
+    u8 defect_gain;				///< 缺陷提取结果增益设置
+}DEFECT_MODEL_CFG;
+
+
+/** 实时浓淡补正模块（P16）的配置信息 */
+typedef struct {
+    u32 model_version;			///< 模块的版本号
+    u8 model_enable;			///< 模块使能标志
+    u8 shading_ddr_wr_en;       ///< 写ddr使能
+    u8 shading_kernel;          ///< 阴影补正模式时的窗口大小选择 1:3x3,2:5x5,3:7x7,4:9x9,5:11x11,6:13x13
+    u8 shading_vh_sel;          ///< 阴影补正时的方向选择 0:XY,1:X,2:Y
+    u8 shading_mode;            ///< 实时浓淡补正模式选择 0:平均值补正，1:中间值补正，2：阴影补正
+    u8 shading_dir;             ///< 缺陷提取选择 0:明，1:暗，2:明暗，3:明暗个别
+    u8 shading_bright_gain;     /**  缺陷增益设置,有效值为0-255 在缺陷提取选择为“明暗个别”
+                                     时为明增益，其他设置下为缺陷增益 */
+    u8 shading_dark_gain;       ///< 暗缺陷增益设置,有效值为0-255 只在缺陷提取选择为“明暗个别”时有效
+    u8 shading_th;              ///< 排除干扰，排除阶调值以下的数据点，有效值为0-255
+    u8 shading_base_value;      /**  在实时浓淡补正模式选择为“平均值补正”及“中间值补正”
+                                     时使用，请设置选择区域内的灰度平均值或者中间值 */
+    u8 pad;				        ///< 对齐
+}SHADING_MODEL_CFG;
+
+
+/** 预处理模块（P17）的配置信息 */
+typedef struct {
+    u32 model_version;                              ///< 模块的版本号
+    u8 model_enable;                                ///< 模块使能标志
+    u8 pre_wr_ddr_en;                               ///< 图像预处理模块写DDR使能标志
+    u8 pre_src_out_sel;                             ///< 图像预处理模块的输出信号源选择，有效值为：1、2、3、4、5、6、7、8、9
+    u8 pipeline_mode_sel;                           ///< 预处理流水线模式选择,有效值为：0、1、2
+    u8 pre_src_in_sel;                              ///< 图像预处理模块的输入信号源选择，有效值为：0、42
+    u8 pad;                                         ///< 对齐
+    u32 pre_wr_ddr_adr;                             ///< 图像预处理结果写入DDR地址
+    BLUR_MODEL_CFG blur_model_cfg;                  ///< 模糊处理
+    GAUSS_MODEL_CFG gauss_model_cfg;                ///< 卷积滤波(高斯滤波)
+    BALANCE_MODEL_CFG balance_model_cfg;            ///< 对比度增强
+    CT_MODEL_CFG contrast_model_cfg;                ///< 对比度转换
+    SHARPNESS_MODEL_CFG sharpness_model_cfg;        ///< 边缘强调
+    PEAK_A_MODEL_CFG peak_a_model_cfg;              ///< 原图腐蚀膨胀A
+    PEAK_B_MODEL_CFG peak_b_model_cfg;              ///< 原图腐蚀膨胀B
+    DEFECT_MODEL_CFG defect_model_cfg;              ///< 缺陷提取
+    SHADING_MODEL_CFG shading_model_cfg;            ///< 实时浓淡补正
+}PRE_MODEL_CFG;
+
+
+/** VGA模块（P31）的配置信息 */
+typedef struct {
+    u32 model_version;              ///< 模块的版本号
+    u8 model_enable;                ///< 模块使能标志
+    u8 vga_pic_src_sel;             ///< FPGA向VGA缓冲写入数据源选择
+    u8 pad[3];                      ///< 对齐
+    u32 vga_color_pic_wr_addr;      ///< FPGA写彩色VGA显示DDR区域起始地址
+}VGA_MODEL_CFG;
+
+
+/** 二值化模块（P33）的配置信息 */
+typedef struct {
+    u32 model_version;          ///< 模块的版本号
+    u8 model_enable;            ///< 模块使能标志
+    u8 bw_inv_en;				///< 取反使能
+    u8 bw_th_high;				///< 上门限
+    u8 bw_th_low;				///< 下门限
+}BW_MODEL_CFG;
+
+/** 腐蚀膨胀（P34、P35）的配置信息 */
+typedef struct {
+    u32 model_version;              ///< 模块的版本号
+    u8 model_enable;                ///< 模块使能标志
+    u8 ed_side_del_enable;          ///< 膨胀腐蚀边界删除使能
+    u8 ed_mode;                     ///< 腐蚀膨胀模式
+    u8 ed_th;                       ///< 腐蚀膨胀门限
+    u8 ed_loop_cnt;                 ///< 腐蚀膨胀循环次数
+    u8 ed_boundary_extr_enable;     ///< 腐蚀膨胀边沿提取功能使能，1：使能，0：不使能
+    u8 pad[2];                      ///< 对齐
+    u32 ed_model_type;              ///< 腐蚀膨胀模板类型
+    u16 ed_filter_mask[16];         ///< 腐蚀膨胀滤波器的掩码
+}ERD_DIL_MODEL_CFG;
+
+
+/** 二值化模块（P32）的配置信息 */
+typedef struct {
+    u32 model_version;                  ///< 模块的版本号
+    u8 model_enable;                    ///< 模块使能标志
+    u8 bw_proc_src_sel;                 ///< 二值化处理模块结果输出选择信号有效值为：33、34、35
+    u8 bw_proc_src_in;                  ///< 二值化处理模块输入源选择信号有效值为：0、17、37、42
+    u8 bw_proc_wr_ddr_en;               ///< 写入DDR使能
+    u32 bw_proc_wr_ddr_addr;            ///< 写入DDR的物理地址
+    BW_MODEL_CFG bw_model_cfg;          ///< 二值化
+    ERD_DIL_MODEL_CFG ed_a_model_cfg;   ///< 腐蚀膨胀A
+    ERD_DIL_MODEL_CFG ed_b_model_cfg;   ///< 腐蚀膨胀B
+}BW_PROCESS_MODEL_CFG;
+
+
+/** 轮廓提取模块（P36）的配置信息 */
+typedef struct {
+    u32 model_version;              ///< 模块的版本号
+    u8 model_enable;                ///< 模块使能标志
+    u8 match_src_sel;               ///< 输入选择,有效值为：0、17、32
+    u8 match_zoom_mode_sel;         ///< 缩放模式选择
+    u8 pad;                         ///< 对齐
+    u32 match_zoom_pic_addr;        ///< 缩放图保存地址
+}MATCH_MODEL_CFG;
+
+
+/** 边沿提取模块（P37）的配置信息 */
+typedef struct {
+    u32 model_version;              ///< 模块的版本号
+    u8 model_enable;                ///< 模块使能标志
+    u8 kernel_type;                 ///< 算子类型：0:sobel，1:prewitt,2:laplacian,3:roberts
+    u8 scan_dir;                    ///< 边沿提取方向，0：XY方向，1：X方向，2：Y方向
+    u8 side_sel_src_sel;            ///< 输入选择 有效值为：0、17、32、41、42
+    u8 sub_pixel_en;                ///< 亚像素使能， 0：不使能，1：使能
+    u8 side_mode_sel;               ///< 边沿提取模式选择信号
+    u8 side_edge_pic_wr_en;         ///< 在输出提取的边沿图模式下的DDR写使能
+    u8 pad;                         ///< 对齐
+    f32 amplitude_low_th;           ///< 幅度下门限值，有效值0-2000
+    f32 amplitude_high_th;          ///< 幅度上门限值 ，有效值0-2000
+    u32 side_sel_point_wr_addr;     ///< 边沿点存储地址
+    u32 side_edge_wr_addr;          ///< 在输出提取的边沿图模式下的DDR写地址
+}SIDE_SELECT_MODEL_CFG;
+
+
+/** 边沿筛选模块（P38）的配置信息 */
+typedef struct {
+    u32 model_version;                  ///< 模块的版本号
+    u8 model_enable;                    ///< 模块使能标志
+    u8 side_choose_angle_en;            ///< 模块使能标志
+    u8 side_choose_w2b_en;              ///< 输入选择
+    u8 pad;                             ///< 对齐
+    u32 side_choose_point_rd_addr;      ///< 边沿点源地址
+    u32 side_choose_point_wr_addr;      ///< 边缘点目的地址
+    u32 side_choose_angle_th;           ///< 角度筛选的阈值
+    u16 side_choose_ring_x;             ///< 环形的圆心X坐标
+    u16 side_choose_ring_y;             ///< 环形的圆心Y坐标
+    u32 side_choose_ring_min_radius;	///< 环形的最小半径
+    u32 side_choose_ring_max_radius;	///< 环形的最大半径
+}SIDE_CHOOSE_MODEL_CFG;
+
+
+/** 曲线拟合模块（P39）的配置信息 */
+typedef struct {
+    u32 model_version;			///< 模块的版本号
+    u8 model_enable;			///< 模块使能标志
+    unsigned char pad[3];
+}CURVE_FIT_MODEL_CFG;
+
+
+/** 连通域模块（P40）的配置信息 */
+typedef struct {
+    u32 model_version;			///< 模块的版本号
+    u8 model_enable;			///< 模块使能标志
+    u8 link_src_sel;		    ///< 输入选择
+    u8 pad[2];					///< 对齐
+    u32 link_wr_addr;           ///< 连通域结果写入地址
+}LINK_MODEL_CFG;
+
+
+/** 色彩提取模块（P41）的配置信息 */
+typedef struct {
+    u32 model_version;			///< 模块的版本号
+    u8 model_enable;		    ///< 模块使能标志
+    u8 result_wr_ddr_en;	    ///< 结果写入DDR使能
+    u8 all_rev;				    ///< 全部颜色指定反转
+    u8 zone_rev;			    ///< 8个色彩抽取,分别取反
+    u8 zone_sel;			    ///< 8个色彩抽取,分别使能
+    u8 pad[3];				    ///< 对齐
+    u32 rgb_bck;			    ///< 没有抽取的部分,背景颜色设置
+    u32 wr_addr;			    ///< 写入DDR地址
+    u16 red_th[8];			    ///< 区域0-7红色抽取门限
+    u16 green_th[8];		    ///< 区域0-7绿色抽取门限
+    u16 blue_th[8];			    ///< 区域0-7蓝色抽取门限
+    u16 hue_th_high[8];         ///< 色调值上门限
+    u16 hue_th_low[8];          ///< 色调值下门限
+    u16 saturation_th_high[8];  ///< 饱和度上门限
+    u16 saturation_th_low[8];   ///< 饱和度下门限
+    u16 intensity_th_high[8];   ///< 亮度上门限
+    u16 intensity_th_low[8];    ///< 亮度下门限
+}COLOR_DRAW_MODEL_CFG;
+
+
+/** 区域筛选（P42）的配置信息 */
+typedef struct {
+    u32 model_version;                  ///< 模块的版本号
+    u8 model_enable;                    ///< 模块使能标志
+    u8 mono_pic_wr_en;                  ///< 黑白图像写入使能,不支持黑白、彩色同时写DDR
+    u8 color_pic_wr_en;                 ///< 彩色图像写入使能,不支持黑白、彩色同时写DDR；黑白相机下固定为0
+    u8 select_src_sel;                  ///< 输入选择
+    u8 select_output_image_flag;        ///< 输出图像标志 0:输出图像 1:输出数据
+    u8 pad[3];                          ///< 对齐
+    u32 pic_wr_ddr_addr;                ///< 图像写入地址
+    u32 background_color_sel;           ///< 背景颜色RGB设置
+    OCTAGON_CFG_PARA octagons_cfg[4];	///< 八边形配置
+    RING_CFG_PARA ring_cfg[4];          ///< 环形配置
+    u8 select_model[8];                 ///< 选择模板顺序记录 1:多边形 2:圆环 3:矩形
+}SELECT_MODEL_CFG;
+
+
+
+/** 直方图统计（P43）的配置信息 */
+typedef struct {
+    u32 model_version;                  ///< 模块的版本号
+    u8 model_enable;                    ///< 模块使能标志
+    u8 hist_stat_src_sel;               ///< 直方图统计源选择信号 有效值为：0、15、16、17、32、42
+    u8 hist_mode_sel;                   ///< 0表示全图统计，1表示只统计二值化数据；
+    u8 hist_bw_dir_sel;                 ///< 统计方向（二值化统计模式下生效） 0表示按列统计二值化数据，1表示按行统计二值化数据
+    u8 hist_bw_color_sel;               ///< 统计颜色（二值化统计模式下生效） 0表示统计白像素，1表示统计黑像素
+    u8 pad[3];                          ///< 对齐
+}HIST_MODEL_CFG;
+
+
+typedef struct {
+    u32 model_disable;			///< 模块未实现
+}UNREALIZE_MODEL;
+
+
+/** 图像预处理模块 */
+typedef struct {
+    CPT_MODEL_CFG cpt_model_cfg;                    ///< accelerator model P0
+    PRE_MODEL_CFG   pre_model_cfg;                  ///< accelerator model P17
+    VGA_MODEL_CFG   vga_model_cfg;                  ///< accelerator model P31
+    BW_PROCESS_MODEL_CFG    bw_proc_model_cfg;      ///< accelerator model P32
+    MATCH_MODEL_CFG match_model_cfg;                ///< accelerator model P36
+    SIDE_SELECT_MODEL_CFG side_sel_model_cfg;       ///< accelerator model P37
+    SIDE_CHOOSE_MODEL_CFG side_choose_model_cfg;    ///< accelerator model P38
+    CURVE_FIT_MODEL_CFG curve_fit_model_cfg;        ///< accelerator model P39
+    LINK_MODEL_CFG link_model_cfg;                  ///< accelerator model P40
+    COLOR_DRAW_MODEL_CFG color_draw_model_cfg;      ///< accelerator model P41
+    SELECT_MODEL_CFG select_model_cfg;              ///< accelerator model P42
+    HIST_MODEL_CFG hist_model_cfg;                  ///< accelerator model P43
+}ACCE_MODEL_PARA;
+
+
+typedef struct {
+    unsigned short accelerator_num;					///< 加速器的个数
+    unsigned short execute_flag;                    ///< 执行标志 0: 默认执行 1 : 不执行
+    unsigned char accelerator[ACCELERATOR_MAX];		///< 加速器的顺序,数组里面保存本步骤所有的加速器模块ID
+    unsigned int accelerator_addr[ACCELERATOR_MAX];	///< 本步加速器的地址信息
+    ACCE_MODEL_PARA image_acce_param;               ///< 图像加速器(预处理)参数
+}ACCE_MODEL;    ///< 如果修改这个结构体需要在加速器文件读写函数里修改数据读取长度
+
+
+typedef struct {
+    unsigned short accelerator_num;					///< 加速器的个数
+    unsigned short execute_flag;                    ///< 执行标志 0: 默认执行 1 : 不执行
+    unsigned char accelerator[ACCELERATOR_MAX];		///< 加速器的顺序,数组里面保存本步骤所有的加速器模块ID
+    unsigned int accelerator_addr[ACCELERATOR_MAX];	///< 本步加速器的地址信息
+}ACCE_MODEL_HEAD;
+
+
+typedef struct {
+    u32 model_version;		///< 模块的版本号
+    u32 model_size;         ///< 模块的大小
+    u32 model_offset;       ///< 模块的偏移量
+}ACCE_MODELS_INFO;
+
+
+
+
+typedef struct {
+    unsigned int start_x;
+    unsigned int start_y;
+    unsigned int width;
+    unsigned int height;
+}SRC_PIC_INFO;
+
+extern u32 g_AcceModelParaAddr[256];
+#define ACCE_PARAM	((ACCE_MODEL *)(g_AcceModelParaAddr[acce_index]))->image_acce_param
+#define ACCE_HEAD	((ACCE_MODEL *)(g_AcceModelParaAddr[acce_index]))
+
+typedef int (*acce_model_init)(unsigned int);
+typedef int (*acce_model_cfg)(unsigned int);			///< para1: acce_index in global accelerator array
+typedef int (*acce_model_pre_model_get)(unsigned int);	///< para1: acce_index in global accelerator array
+typedef void (*acce_model_output_get)(unsigned int, unsigned int, void *);	/** para1: acce_index in global accelerator array,
+                                                                                para2: output type id, different model can provide different output,
+                                                                                para3: pointer for data saving */
+typedef void (*acce_model_enable)(void);
+typedef void (*acce_model_disable)(void);
+typedef void (*acce_model_write_ddr_on)(unsigned int);  ///< param1: acce_index in global accelerator array
+typedef void (*acce_model_write_ddr_off)(void);
+typedef void (*acce_model_write_ddr)(unsigned int, unsigned int);	/**  para1: acce_index in global accelerator array
+                                                                         para2: 0: disable model write DDR, 1: enable model write DDR */
+typedef void (*acce_model_reg_show)(void);
+typedef void (*acce_model_input_src_sel)(unsigned int,unsigned int);/**  para1: acce_index in global accelerator array
+                                                                         para2: acce_model_id input source module ID */
+
+typedef struct {
+    acce_model_init fpAcceModelInit;
+    acce_model_cfg	fpAcceModelCfg;
+    acce_model_pre_model_get fpModelPreModelGet;
+    acce_model_output_get fpModelOutputGet;
+    acce_model_enable fpModelEnable;
+    acce_model_disable fpModelDisable;
+    acce_model_write_ddr_on fpModelWriteDDROn;
+    acce_model_write_ddr_off fpModelWriteDDROff;
+    acce_model_reg_show fpModelRegShow;
+    acce_model_input_src_sel fpModelInputSrc;
+}ACCE_CALLBACK_SET;
+
+
+/** 系统模块的配置信息 */
+typedef struct{
+    u32 cmos_start_y;           ///<  CMOS图像高度偏移地址设置
+    u32 pic_pixel_num;          ///<  每行图像，像素数
+    u32 pic_line_num;           ///<  每幅图像，像素行数
+    u32 user_status;            ///<  0表示编辑状态，1表示运行状态
+    u32 edited_status;          ///<  编辑状态时当前编辑界面的标号，和模块的编号保持一致，非模块编辑界面时为全1(0xffffffff)
+    u8 display_enable;          ///<  显示使能
+    u8 mono_enable;             ///<  灰度图像使能，使能显示灰度 不使能显示彩色
+    u8 pad[2];                  ///<  对齐
+    u32 vga_video_dis_addr;     ///<  视频源地址
+    u32 rgb_bkg;                ///<  背景颜色
+    u16 start_x;                ///<  显示起始坐标X
+    u16 start_y;                ///<  显示起始坐标Y
+    u16 height;                 ///<  显示高度
+    u16 width;                  ///<  显示宽度
+}SYSTEM_MODEL_CFG;
+
+
+/** CMOS模块的配置信息 */
+typedef struct {
+    u8 wb_mode;					///< 白平衡模式
+    u8 wb_rgain;				///< 手动模式，Red通道增益
+    u8 wb_bgain;				///< 手动模式，Blue通道增益
+}CMOS_MODEL_CFG;
+
+
+extern ACCE_MODEL * g_pAcceModel;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+/**
+ * @brief AcceModelMemoryMmap
+ * @param
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 映射加速器模块内存
+ */
+DLLSHARED_EXPORT int AcceModelMemoryMmap(void);
+
+
+/**
+ * @brief GetAcceModelVirtualAddr
+ * @param acce_id：模块ID
+ * @param type：结果类型
+ * @param data_size：结果数据大小的指针(根据输出不同的结果返回对应数据的大小)
+ * @return 对应的虚地址指针
+ * @author Vincent
+ * @date 2017/5/12
+ * @note 获取指定模块输出结果的虚地址
+ */
+DLLSHARED_EXPORT void * GetAcceModelVirtualAddr(unsigned int acce_id, unsigned int type,  unsigned int * data_size);
+
+
+/**
+ * @brief GetAcceModelPointer
+ * @return
+ * @author Vincent
+ * @date 2017/5/31
+ * @note 获取加速器模块存储地址指针
+ */
+DLLSHARED_EXPORT void * GetAcceModelPointer(void);
+
+
+/**
+ * @brief GetStepAcceModelPointer
+ * @param step_index 步骤索引号
+ * @return
+ * @author Vincent
+ * @date 2017/5/31
+ * @note 获取对应步骤的加速器模块存储地址指针
+ */
+DLLSHARED_EXPORT void * GetStepAcceModelPointer(u32 step_index);
+
+
+/**
+ * @brief GetEdgePointAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/8
+ * @note 获取边沿点存储地址指针
+ */
+DLLSHARED_EXPORT void * GetEdgePointAddr(void);
+
+
+/**
+ * @brief GetCptColorPicAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/8
+ * @note 获取Cpt彩色图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetCptColorPicAddr(void);
+
+
+/**
+ * @brief GetCptMonoPicAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/8
+ * @note 获取Cpt灰度图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetCptMonoPicAddr(void);
+
+
+/**
+ * @brief GetLinkRstAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/19
+ * @note 获取连通域结果存储地址指针
+ */
+DLLSHARED_EXPORT void * GetLinkRstAddr(void);
+
+/**
+ * @brief GetSimiColorAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取仿真模式下彩色图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetSimiColorAddr(void);
+
+
+/**
+ * @brief GetSimiMonoAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取仿真模式下黑白图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetSimiMonoAddr(void);
+
+
+/**
+ * @brief GetPreProcAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取预处理模块图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetPreProcAddr(void);
+
+
+/**
+ * @brief GetVgaDisplayAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取VGA图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetVgaDisplayAddr(void);
+
+
+/**
+ * @brief GetBinaryAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取二值化存储地址指针
+ */
+DLLSHARED_EXPORT void * GetBinaryAddr(void);
+
+
+/**
+ * @brief GetSelectColorAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取区域筛选彩色图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetSelectColorAddr(void);
+
+
+/**
+ * @brief GetSelectMonoAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取区域筛选黑白图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetSelectMonoAddr(void);
+
+
+/**
+ * @brief GetColorDrawAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取颜色抽取图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetColorDrawAddr(void);
+
+
+/**
+ * @brief GetSkeletonAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取轮廓匹配特征点存储地址指针
+ */
+DLLSHARED_EXPORT void * GetSkeletonAddr(void);
+
+
+/**
+ * @brief GetEdgePointsStandbyAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取边沿点备份区存储地址指针
+ */
+DLLSHARED_EXPORT void * GetEdgePointsStandbyAddr(void);
+
+
+/**
+ * @brief GetEpsSelectAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取边沿筛选结果存储地址指针
+ */
+DLLSHARED_EXPORT void * GetEpsSelectAddr(void);
+
+
+/**
+ * @brief GetEdgePicAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取边沿图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetEdgePicAddr(void);
+
+
+/**
+ * @brief GetMapImageRotateAddr
+ * @return
+ * @author Vincent
+ * @date 2017/6/26
+ * @note 获取映射测量功能翻转图像存储地址指针
+ */
+DLLSHARED_EXPORT void * GetMapImageRotateAddr(void);
+
+/**
+ * @brief GetMapDataAddr
+ * @return
+ * @author Vincent
+ * @date 2017/7/19
+ * @note 获取映射测量功能统计参数存储地址指针
+ */
+DLLSHARED_EXPORT void * GetMapDataAddr(void);
+
+/**
+ * @brief AcceRegParamSet
+ * @param reg_addr：寄存器地址
+ * @param g_Reg_Param：寄存器参数数组
+ * @param size：数组大小
+ * @author Vincent
+ * @date 2017/6/9
+ * @note 加速器模块寄存器参数设置函数
+ */
+DLLSHARED_EXPORT void AcceRegParamSet(unsigned int reg_addr, FPGA_REG_PARAM * g_Reg_Param, unsigned int size);
+
+
+/**
+ * @brief AcceModuleOutputValidClear
+ * @param
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 清理所有模块的输出有效标志位
+ */
+DLLSHARED_EXPORT void AcceModuleOutputValidClear(void);
+
+/**
+ * @brief AcceModuleOutputValidChcek
+ * @param acce_id: 加速器模块ID
+ * @return 0：对应加速器模块工作未完成
+ *         1：对应加速器模块工作已完成
+ * @author Terry
+ * @date 2017/5/22
+ * @note 检查指定模块的输出是否生效
+ */
+DLLSHARED_EXPORT unsigned int AcceModuleOutputValidChcek(unsigned int acce_id);
+
+/**
+ * @brief AcceleratorModuleInit
+ * @param acce_id: 加速器模块ID
+ * @param acce_index: 加速器数组中的索引
+ * @return 0：对应加速器模块初始化成功
+ *         others：对应加速器模块初始化失败
+ * @author Vincent
+ * @date 2017/5/26
+ * @note 统一的加速器模块初始化接口
+ */
+DLLSHARED_EXPORT int AcceleratorModuleInit(unsigned int acce_id, unsigned int acce_index);
+
+/**
+ * @brief AcceleratorModuleInitAll
+ * @param acce_index: 加速器数组中的索引
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器模块配置接口
+ */
+DLLSHARED_EXPORT void AcceleratorModuleInitAll(unsigned int acce_index);
+
+/**
+ * @brief AcceleratorModuleConfig
+ * @param acce_id: 加速器模块ID
+ * @param acce_index: 加速器数组中的索引
+ * @return 0：对应加速器模块配置成功
+ *         others：对应加速器模块配置失败
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器模块配置接口
+ */
+DLLSHARED_EXPORT int AcceleratorModuleConfig(unsigned int acce_id, unsigned int acce_index);
+
+/**
+ * @brief AcceleratorModuleConfigAll
+ * @param acce_index: 加速器数组中的索引
+ * @return 0：对应加速器模块配置成功
+ *         others：对应加速器模块配置失败
+ * @author Vincent
+ * @date 2017/5/25
+ * @note 每步加速器模块配置接口
+ */
+DLLSHARED_EXPORT int AcceleratorModuleConfigAll(u32 acce_index);
+
+/**
+ * @brief AcceModuleSrcSelAutoSet
+ * @param acce_index 步骤索引号
+ * @return
+ * @author Vincent
+ * @date 2017/7/1
+ * @note 自动设置加速器相互间的图像源与VGA显示源
+ */
+DLLSHARED_EXPORT int AcceModuleSrcSelAutoSet(u32 acce_index);
+
+/**
+ * @brief AcceleratorModulePreModuleGet
+ * @param acce_id: 加速器模块ID
+ * @param acce_index: 加速器数组中的索引
+ * @return 加速器对应的输入模块ID
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器输入模块ID获取接口
+ */
+DLLSHARED_EXPORT int AcceleratorModulePreModuleGet(unsigned int acce_id, unsigned int acce_index);
+
+/**
+ * @brief AcceleratorModuleDisable
+ * @param acce_id: 加速器模块ID
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器模块关闭接口
+ */
+DLLSHARED_EXPORT void AcceleratorModuleDisable(unsigned int acce_id);
+
+/**
+ * @brief AcceleratorAllModule_Disable
+ * @param
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 所有加速器模块关闭接口
+ */
+DLLSHARED_EXPORT void AcceleratorAllModuleDisable(void);
+
+
+/**
+ * @brief AcceleratorAllModuleClose
+ * @param
+ * @return
+ * @author Vincent
+ * @date 2017/6/21
+ * @note 退出编辑模式后关闭所有加速器模块
+ */
+DLLSHARED_EXPORT void AcceleratorAllModuleClose(void);
+
+
+/**
+ * @brief AcceleratorModuleEnable
+ * @param acce_id: 加速器模块ID
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器模块打开接口
+ */
+DLLSHARED_EXPORT void AcceleratorModuleEnable(unsigned int acce_id);
+
+
+/**
+ * @brief GetAcceModuleEnable
+ * @param acce_index: 步骤索引号
+ * @param acce_id: 模块ID
+ * @return ret: 查询到的模块使能状态
+ * @author Vincent
+ * @date 2017/7/1
+ * @note 获取指定步骤指定模块的使能状态
+ */
+DLLSHARED_EXPORT int GetAcceModuleEnable(unsigned int acce_index, unsigned int acce_id);
+
+
+/**
+ * @brief StepAcceleratorModuleEnable
+ * @param acce_index: 加速器数组中的索引
+ * @return
+ * @author Vincent
+ * @date 2017/6/22
+ * @note 单个步骤加速器模块参数配置与使能
+ */
+DLLSHARED_EXPORT void StepAcceleratorModuleEnable(unsigned int acce_index);
+
+/**
+ * @brief AcceleratorModuleCfgShow
+ * @param acce_id: 加速器模块ID
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器寄存器配置信息打印接口
+ */
+DLLSHARED_EXPORT void AcceleratorModuleCfgShow(unsigned int acce_id);
+
+/**
+ * @brief AcceleratorModuleWriteDdrEnable
+ * @param acce_id: 加速器模块ID
+ * @param acce_index: 加速器数组中的索引
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器写DDR使能接口
+ */
+DLLSHARED_EXPORT void AcceleratorModuleWriteDdrEnable(unsigned int acce_id, unsigned int acce_index);
+
+/**
+ * @brief AcceleratorModuleWriteDdrDisable
+ * @param acce_id: 加速器模块ID
+ * @param acce_index: 加速器数组中的索引
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器写DDR关闭接口
+ */
+DLLSHARED_EXPORT void AcceleratorModuleWriteDdrDisable(unsigned int acce_id);
+
+/**
+ * @brief AcceleratorModuleWriteDdrCfg
+ * @param acce_id: 加速器模块ID
+ * @param acce_index: 加速器数组中的索引
+ * @param on_off_flag: 0:off, 1:on
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 统一的加速器写DDR关闭\使能接口
+ */
+DLLSHARED_EXPORT void AcceleratorModuleWriteDdrCfg(unsigned int acce_id, unsigned int acce_index, unsigned int on_off_flag);
+
+/**
+ * @brief AcceleratorModuleParamsBackup
+ * @param acce_index: 加速器数组中的索引
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 进编辑界面之前调用本函数保存本步加速器模块的原始配置信息
+ */
+DLLSHARED_EXPORT void AcceleratorModuleParamsBackup(unsigned int acce_index);
+
+/**
+ * @brief AcceleratorModuleParamsRecover
+ * @param acce_index: 加速器数组中的索引
+ * @return
+ * @author Terry
+ * @date 2017/5/22
+ * @note 取消编辑时调用本函数还原本步加速器模块的原始配置信息
+ */
+DLLSHARED_EXPORT void AcceleratorModuleParamsRecover(unsigned int acce_index);
+
+/**
+ * @brief AcceleratorModuleParamsCopy
+ * @param src_index: 拷贝源步骤索引号
+ * @param dst_index: 目标步骤索引号
+ * @author Vincent
+ * @date 2017/7/6
+ * @note 单步加速器模块参数复制
+ */
+DLLSHARED_EXPORT void AcceleratorModuleParamsCopy(unsigned int src_index, unsigned int dst_index);
+
+
+/**
+ * @brief GetLastAcceModelOutputAddr
+ * @param step_index：步骤索引号
+ * @param type：输出结果类型
+ * @param data_size：结果数据大小的指针(根据输出不同的结果返回对应数据的大小)
+ * @return NULL：参数出错或者模块没有输出，other：存储结果的地址指针
+ * @author Vincent
+ * @date 2017/5/12
+ * @note 获取最后一个加速器模块的输出地址
+ */
+DLLSHARED_EXPORT void * GetLastAcceModelOutputAddr(unsigned int step_index, unsigned int type, unsigned int * data_size);
+
+/**
+ * @brief Task_Step_Accelerator_Model_Work
+ * @param step_index: 步骤索引号
+ * @param model_flag: 取样/运行标志
+ * @return
+ * @author Vincent
+ * @date 2017/6/9
+ * @note 单步任务步骤加速器模块应用函数
+ */
+DLLSHARED_EXPORT int Task_Step_Accelerator_Model_Work(unsigned int step_index, unsigned int model_flag);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // ACCECOMMON_H

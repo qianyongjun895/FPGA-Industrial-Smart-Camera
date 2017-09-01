@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompareJump_root>
+  <TaskResultNode>
+    <CompareJump_Node ResultName="错误码">
+      <Result_ID>0</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>FALSE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_UINT</result_type>
+    </CompareJump_Node>
+    <CompareJump_Node ResultName="跳转结果">
+      <Result_ID>1</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>FALSE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_SINT</result_type>
+    </CompareJump_Node>
+    <CompareJump_Node ResultName="跳转步骤">
+      <Result_ID>2</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>FALSE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_SINT</result_type>
+    </CompareJump_Node>
+  </TaskResultNode>
+ <TaskExplainNode>通过对两个关联步骤输出参数大小的比较结果来控制跳转到不同的步骤。</TaskExplainNode>
+</CompareJump_root>

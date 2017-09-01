@@ -1,0 +1,53 @@
+#ifndef MEANBRIGHTNESSWIDGET_H
+#define MEANBRIGHTNESSWIDGET_H
+
+#include <QWidget>
+#include <QLibrary>
+#include <QDialog>
+#include <QLabel>
+#include <QTimer>
+#include "MeanBrightnessGlobal.h"
+namespace Ui {
+class MeanBrightnessWidget;
+}
+typedef QDialog* (*Fun_GetNumkeyBoardDlg)();
+typedef QString (*Fun_GetNumString)();
+typedef void (*ShowRangeEn)();
+typedef QDialog* (*Fun_GetLearnDialog)();
+typedef void* (*Fun_SetResultString)(QString str);
+class MeanBrightnessWidget : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit MeanBrightnessWidget(QWidget *parent = 0);
+    ~MeanBrightnessWidget();
+    int Set_Parameter_To_Ram();
+    void Init_Input_Ptr(void *ptr,int i_step_index,int new_flag,void *pen_color);
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event);
+
+private slots:
+    void on_pushButtonCalc_clicked();
+    void CalcTimerSlot();
+
+private:
+    Ui::MeanBrightnessWidget *ui;
+    QLabel *m_label;
+    QLibrary m_keyBoard_Lib;
+    QDialog *Numkey;
+    MEANBRI_INPUT_PARAM* pInputPara;
+    int m_step_index;//当前步骤索引
+    QLibrary m_Learn_Lib;
+    QTimer *CalcTimer;
+
+    void LoadKeyBoardLib();
+    void NumKeyBoardDlg(QObject *watched, QEvent *event, int Min_value, int Max_value);
+    void SetInputData();
+    void GetCalcDataShow();
+    void InitData();
+    void LoadLearnLib();
+};
+
+#endif // MEANBRIGHTNESSWIDGET_H

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trend_root>
+  <TaskResultNode>
+  <BLOB_COUNT_Node ResultName="错误码">
+      <Result_ID>0</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>TRUE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>TRUE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_UINT</result_type>
+    </BLOB_COUNT_Node>
+    <BLOB_COUNT_Node ResultName="OK/NG">
+      <Result_ID>1</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>TRUE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>TRUE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_UINT</result_type>
+    </BLOB_COUNT_Node>
+    <BLOB_COUNT_Node ResultName="Blob个数">
+      <Result_ID>2</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>FALSE</calc>
+      <cmp_jump>TRUE</cmp_jump>
+      <data_judge>TRUE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>FALSE</stat>
+      <trend>FALSE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_UINT</result_type>
+    </BLOB_COUNT_Node>
+  </TaskResultNode>
+  <AcceCommonNode>
+    <Mode>ACCE_CPT_MODEL_ID</Mode>
+	<Mode>ACCE_AREA_SELECT_MODEL_ID</Mode>
+	<Mode>ACCE_BW_PROC_MODEL_ID</Mode>
+	<Mode>ACCE_CONNECT_REGION_MODLE_ID</Mode>
+  </AcceCommonNode>
+   <TaskExplainNode>将图像二值化（黑白化）后,并输出检测个数</TaskExplainNode>
+</Trend_root>

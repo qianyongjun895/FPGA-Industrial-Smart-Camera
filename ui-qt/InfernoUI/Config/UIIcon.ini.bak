@@ -1,0 +1,19 @@
+[Inferno]
+buttonHome = ./image/navigation/home.png
+buttonImage = ./image/navigation/carmeraPic.png
+butttonTool = ./image/navigation/flow.png
+butttonDataOut = ./image/navigation/output.png
+butttonCalibrat = ./image/navigation/calibration.png
+butttonSysSet = ./image/navigation/sys.png
+butttonAdmin = ./image/navigation/admin.png
+butttonRun = ./image/navigation/start.png
+butttonRunStep = ./image/navigation/stept.png
+noExecute = ./image/Buttons/noexcuse.png
+ok= ./image/Buttons/ok.png
+ng = ./image/Buttons/ng.png
+[libPath]
+libtaskparse = ./lib/sszn/libtaskparse.so
+Pretreatment = ./UILib/libPretreatment.so
+Relation = ./UILib/libRelation.so
+libtask = ./lib/sszn/libtask.so
+libHardware = ./lib/sszn/libHardware.so

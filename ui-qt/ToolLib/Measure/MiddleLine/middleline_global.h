@@ -1,0 +1,12 @@
+#ifndef MIDDLELINE_GLOBAL_H
+#define MIDDLELINE_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(MIDDLELINE_LIBRARY)
+#  define MIDDLELINESHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define MIDDLELINESHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // MIDDLELINE_GLOBAL_H

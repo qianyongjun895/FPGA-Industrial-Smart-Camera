@@ -1,0 +1,247 @@
+QMainWindow{
+     background: rgb(214, 214, 214);
+}
+
+QDialog{
+    background: rgb(200, 200, 200);
+    border-radius:5px;
+}
+/*
+QMdiArae
+{
+    background: rgba(64, 64, 64, 255);
+    border-width: 2px;
+    border-color: rgba(227, 227, 227, 255);
+    border-style: solid;
+}
+
+QToolBar
+{
+    background: rgba(193, 193, 193, 255);
+}
+*/
+
+KeyboardDlg QPushButton{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,	/*三个坐标对应的是上。中。下的background的颜色*/
+                                 stop: 0 #122C39, stop: 0.5 #758385,
+                                 stop: 1.0 #15A8FF);
+    border-color: #11505C;			/*改变boder的颜色，以便实现动态感觉*/
+    border-style: outset;
+    border-width: 5px;				/*boder的长度，有突出效果*/
+    border-radius: 1px;
+    padding: 1px;
+}
+
+KeyboardDlg QPushButton::hover{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #5B5F5F, stop: 0.5 #0C2436,
+                                 stop: 1.0 #27405A);
+    border-color: #11223F;			/*boder的颜色,boder跟background做对比设置可以有较明显效果*/
+
+}
+
+KeyboardDlg QPushButton::pressed{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #969B9C, stop: 0.5 #16354B,
+                                 stop: 1.0 #244F76);
+    border-color: #11505C;
+}
+KeyboardDlg QPushButton::disabled{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #282B2C, stop: 0.5 #09121A,
+                                 stop: 1.0 #111D29);
+    border-color: #0A1320;
+    color:#6A6864;
+
+}
+QMessageBox QPushButton
+{
+    /*color: white;*/
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(232, 232, 232), stop:0.5 rgb(199, 199, 199), stop:1 rgb(177, 177, 177));
+    border-width: 2px;
+    border-color: rgb(232, 232, 232);
+    border-style: solid;
+    border-radius: 5;
+    padding: 3px;
+    min-width: 9ex;
+    min-height: 2.5ex;
+    /*font-size: 10px;*/
+    font: 75 16pt "微软雅黑";
+}
+
+MainWindow QPushButton
+{
+    /*color: white;*/
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(232, 232, 232), stop:0.5 rgb(199, 199, 199), stop:1 rgb(177, 177, 177));
+    border-width: 0px;
+}
+
+/*PretreatmentModule QListView::item:hover {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(255, 224, 142), stop:0.5 rgb(255, 215, 102), stop:1 rgb(254, 246, 192));
+    border-width: 1px;
+    border-color: rgb(211, 132, 56);
+    border-style: solid;
+    border-radius: 3;
+}*/
+
+QListView::item:selected:!active {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(255, 224, 142), stop:0.5 rgb(255, 215, 102), stop:1 rgb(254, 246, 192));
+    border-width: 1px;
+    border-color: rgb(211, 132, 56);
+    border-style: solid;
+    border-radius: 3;
+    color:rgb(0, 0, 0);
+}
+
+QListView::item:selected:active {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(249, 220, 117), stop:0.5 rgb(244, 201, 69), stop:1 rgb(249, 220, 117));
+    border-width: 1px;
+    border-color: rgb(211, 132, 56);
+    border-style: solid;
+    border-radius: 3;
+    color:rgb(0, 0, 0);
+}
+
+QListWidget
+{
+    background: rgb(215, 219, 228);
+    border-width: 1px;
+    border-color: rgb(77, 77, 77);
+    border-radius: 3;
+    border-style: solid;
+    font: 75 16pt "SimSun";
+}
+
+
+QTreeView
+{
+    background: rgb(240, 240, 240);
+    border-width: 1px;
+    border-color: rgb(77, 77, 77);
+    border-radius: 3;
+    border-style: solid;
+}
+
+QTreeView::item:hover {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(255, 224, 142), stop:0.5 rgb(255, 215, 102), stop:1 rgb(254, 246, 192));
+    border-width: 1px;
+    border-color: rgb(211, 132, 56);
+    border-style: solid;
+    border-radius: 3;
+}
+
+QTreeView::item:selected:!active {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(255, 224, 142), stop:0.5 rgb(255, 215, 102), stop:1 rgb(254, 246, 192));
+    border-width: 1px;
+    border-color: rgb(211, 132, 56);
+    border-style: solid;
+    border-radius: 3;
+    color:rgb(0, 0, 0);
+}
+
+QTreeView::item:selected:active {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(249, 220, 117), stop:0.5 rgb(244, 201, 69), stop:1 rgb(249, 220, 117));
+    border-width: 1px;
+    border-color: rgb(211, 132, 56);
+    border-style: solid;
+    border-radius: 3;
+    color:rgb(0, 0, 0);
+}
+
+QTabWidget::pane
+{
+    border-radius: 3;
+    border-width:2px;
+    border-color:rgb(255, 255, 255);
+    border-style: inset;
+    background-color: rgb(132, 171, 208);
+    background: rgb(230, 230, 230);
+    color: rgb(0, 0, 0);
+}
+
+/*
+QTabWidget::pane{
+        border:1px solid rgba(172, 172, 172, 255);
+}
+*/
+QTabWidget::tab-bar
+{
+    color:rgb(172, 172, 172);
+    background: rgb(172, 172, 172);
+    alignment:left;
+}
+/*
+QDockWidget
+{
+    qproperty-titleColor: red;
+    border-radius:3;
+    border-width:2px;
+    border-color:rgb(255, 0, 0);
+    border-style:solid;
+}
+
+QMessageBox QPushButton
+{
+    background: red
+}
+*/
+QCheckBox
+{
+    color: black
+}
+QLabel {
+/*font-weight: bold;
+font-size: 15px;*/
+}
+
+QSlider::groove:horizontal {
+border: 1px solid #4A708B;
+background: #C0C0C0;
+height: 5px;
+border-radius: 1px;
+padding-left:-1px;
+padding-right:-1px;
+}
+
+QSlider::sub-page:horizontal {
+background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgb(255, 224, 142), stop:1 rgb(255, 214, 102));
+background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,
+    stop:0 rgb(250, 210, 85), stop:1 rgb(144, 182, 54));
+border: 1px solid #4A708B;
+height: 10px;
+border-radius: 2px;
+}
+
+QSlider::add-page:horizontal {
+background: #575757;
+border: 0px solid #777;
+height: 20px;
+border-radius: 2px;
+}
+
+QSlider::handle:horizontal
+{
+    background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+    stop:0.6 rgb(163, 212, 118), stop:0.778409 rgb(255, 255, 255));
+
+    height: 25px;
+    width: 30px;
+    margin-top: -6px;
+    margin-bottom: -6px;
+    border-radius: 8Px;
+}
+
+QGroupBox{
+border-width:2px;
+border-style:solid;
+border-radius: 10px;
+border-color:black;
+margin-top:0.5ex;
+}
+
+QLineEdit{
+border:2px groove gray;
+border-radius:5px;
+padding:2px 4px
+}

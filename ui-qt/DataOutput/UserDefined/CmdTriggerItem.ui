@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CmdTriggerItem</class>
+ <widget class="QWidget" name="CmdTriggerItem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>791</width>
+    <height>47</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QCheckBox" name="checkBox_Task">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>5</y>
+     <width>141</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Cmd_trigger_string">
+   <property name="geometry">
+    <rect>
+     <x>176</x>
+     <y>5</y>
+     <width>201</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEndSymbol">
+   <property name="geometry">
+    <rect>
+     <x>714</x>
+     <y>5</y>
+     <width>71</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtSplit">
+   <property name="geometry">
+    <rect>
+     <x>639</x>
+     <y>5</y>
+     <width>71</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtAddr">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>5</y>
+     <width>91</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtNum">
+   <property name="geometry">
+    <rect>
+     <x>476</x>
+     <y>5</y>
+     <width>51</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxDataType">
+   <property name="geometry">
+    <rect>
+     <x>533</x>
+     <y>6</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

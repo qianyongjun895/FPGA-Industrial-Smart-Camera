@@ -1,0 +1,12 @@
+#ifndef TOOLSCRIPT_GLOBAL_H
+#define TOOLSCRIPT_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(TOOLSCRIPT_LIBRARY)
+#  define TOOLSCRIPTSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define TOOLSCRIPTSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // TOOLSCRIPT_GLOBAL_H

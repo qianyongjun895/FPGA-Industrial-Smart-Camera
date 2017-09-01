@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AbnormalArea_root>
+  <TaskResultNode>
+    <AbnormalArea_Node ResultName="错误码">
+      <Result_ID>0</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>TRUE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_UINT</result_type>
+    </AbnormalArea_Node>
+    <AbnormalArea_Node ResultName="OK/NG">
+      <Result_ID>1</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>TRUE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_SINT</result_type>
+    </AbnormalArea_Node>
+    <AbnormalArea_Node ResultName="分数">
+      <Result_ID>2</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>TRUE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_FLT</result_type>
+    </AbnormalArea_Node>
+  </TaskResultNode>
+  <AcceCommonNode>
+    <Mode>ACCE_CPT_MODEL_ID</Mode>
+	<Mode>ACCE_AREA_SELECT_MODEL_ID</Mode>
+    <Mode>ACCE_PRE_MODEL_ID</Mode>
+  </AcceCommonNode>
+   <TaskExplainNode>检测当前图像与注册的模板图像黑白面积的差异，并输出面积差值。</TaskExplainNode>
+</AbnormalArea_root>

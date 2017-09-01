@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<P2PDist_root>
+  <TaskResultNode>
+    <P2PDist_Node ResultName="错误码">
+      <Result_ID>0</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>FALSE</calc>
+      <cmp_jump>FALSE</cmp_jump>
+      <data_judge>FALSE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>FALSE</stat>
+      <trend>FALSE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_UINT</result_type>
+    </P2PDist_Node>
+    <P2PDist_Node ResultName="两点距离(p)">
+      <Result_ID>1</Result_ID>
+      <modbus>FALSE</modbus>
+      <free_pro>FALSE</free_pro>
+      <calc>TRUE</calc>
+      <cmp_jump>TRUE</cmp_jump>
+      <data_judge>TRUE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_DBL</result_type>
+    </P2PDist_Node>
+    <P2PDist_Node ResultName="两点距离(mm)">
+      <Result_ID>2</Result_ID>
+      <modbus>TRUE</modbus>
+      <free_pro>TRUE</free_pro>
+      <calc>TRUE</calc>
+      <cmp_jump>TRUE</cmp_jump>
+      <data_judge>TRUE</data_judge>
+      <task_link_X>FALSE</task_link_X>
+      <task_link_Y>FALSE</task_link_Y>
+      <task_link_deg>FALSE</task_link_deg>
+      <stat>TRUE</stat>
+      <trend>TRUE</trend>
+      <Todo_Protocol1>FALSE</Todo_Protocol1>
+      <Todo_Protocol2>FALSE</Todo_Protocol2>
+      <Todo_Task1>FALSE</Todo_Task1>
+      <Todo_Task2>FALSE</Todo_Task2>
+      <Todo_Task3>FALSE</Todo_Task3>
+      <Todo_Task4>FALSE</Todo_Task4>
+      <result_type>DATA_DBL</result_type>
+    </P2PDist_Node>
+  </TaskResultNode>
+   <TaskExplainNode>检测从点到直线的垂线距离。</TaskExplainNode>
+</P2PDist_root>

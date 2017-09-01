@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExitTask_root>
+  <TaskResultNode/>
+   <TaskExplainNode>执行到该步骤时自动结束相机的运行状态。</TaskExplainNode>
+</ExitTask_root>

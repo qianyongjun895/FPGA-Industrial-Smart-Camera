@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Protocol_Node>
+    <UserDefined ProtocolName="自定义协议" Protocol_Type="0" Enabled_Flag="TRUE" CommMode="串口" LibPath="./UILib/libUserDefined.so">
+	  <CommModeNode>串口</CommModeNode>
+	  <CommModeNode>TCP</CommModeNode>
+	  <CommModeNode>UDP</CommModeNode>
+	</UserDefined>
+	<ModbusNode ProtocolName="Modbus" Protocol_Type="1" Enabled_Flag="FALSE" CommMode="串口" LibPath="./UILib/libModbus.so">
+	  <CommModeNode>串口</CommModeNode>
+	  <CommModeNode>TCP</CommModeNode>
+	</ModbusNode>
+	<MitFXPlc ProtocolName="三菱FX系列" Protocol_Type="2" Enabled_Flag="FALSE" CommMode="串口" LibPath="./UILib/libMitFxPlc.so">
+	  <CommModeNode>串口</CommModeNode>
+	</MitFXPlc>
+	<MitFXPlc ProtocolName="HansRobot" Protocol_Type="3" Enabled_Flag="FALSE" CommMode="TCP" LibPath="./UILib/libHansRobothProtocol.so">
+	  <CommModeNode>TCP</CommModeNode>
+	</MitFXPlc>
+  </Protocol_Node>
+  <CommMode_Node>
+    <Uart Comm_Name="串口" Comm_Type="0" LibPath="./UILib/libSerialPort.so">
+	  <WorkMode>从机</WorkMode>
+	  <DevAddr>1</DevAddr>
+	  <PortNumber>COM1</PortNumber>
+	  <Baudrate>115200</Baudrate>
+	  <DataBit>8</DataBit>
+	  <Parity>无校验</Parity>
+	  <StopBit>1</StopBit>
+	</Uart>
+	<Tcp Comm_Name="TCP" Comm_Type="1" LibPath="./UILib/libEthernetPort.so">
+	  <WorkMode>服务端</WorkMode>
+	  <DevAddr>1</DevAddr>
+	  <IP>192.168.0.200</IP>
+	  <PortNumber>2000</PortNumber>
+	</Tcp>
+	<Udp Comm_Name="UDP" Comm_Type="2" LibPath="./UILib/libUdpComm.so">
+	  <Local_IP>192.168.0.200</Local_IP>
+	  <Local_Port>501</Local_Port>
+	  <Server_IP>192.168.0.201</Server_IP>
+	  <Server_Port>502</Server_Port>
+	</Udp>
+  </CommMode_Node>
+</root>

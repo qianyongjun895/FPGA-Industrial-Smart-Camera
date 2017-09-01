@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+    <TaskResultNode/>
+    <AcceCommonNode>
+        <Mode>ACCE_CPT_MODEL_ID</Mode>
+        <Mode>ACCE_BW_PROC_MODEL_ID</Mode>
+    </AcceCommonNode>
+</root>

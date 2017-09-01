@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <IO_Output_Node>
+    <IO1_Node Output_Width="1" Valid_Flag="High"></IO1_Node>
+	<IO2_Node Output_Width="1" Valid_Flag="High"></IO2_Node>
+	<IO3_Node Output_Width="1" Valid_Flag="High"></IO3_Node>
+	<IO4_Node Output_Width="1" Valid_Flag="High"></IO4_Node>
+	<Flash_Node Output_Width="1" Valid_Flag="Low"></Flash_Node>
+  </IO_Output_Node>
+  <IO_Trigger_Node>
+    <IO1_Node Delay_time="1" Jitters_timer="1"></IO1_Node>
+	<IO2_Node Delay_time="1" Jitters_timer="1"></IO2_Node>
+  </IO_Trigger_Node>
+</root>

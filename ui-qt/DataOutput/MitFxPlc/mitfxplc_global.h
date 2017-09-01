@@ -1,0 +1,12 @@
+#ifndef MITFXPLC_GLOBAL_H
+#define MITFXPLC_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(MITFXPLC_LIBRARY)
+#  define MITFXPLCSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define MITFXPLCSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // MITFXPLC_GLOBAL_H

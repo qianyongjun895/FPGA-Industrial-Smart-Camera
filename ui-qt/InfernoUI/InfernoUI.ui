@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InfernoUI</class>
+ <widget class="QMainWindow" name="InfernoUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>InfernoUI</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QToolButton" name="btnRun">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>563</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>运行</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>485</y>
+      <width>91</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(150, 150, 150);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widgetContent" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>932</width>
+      <height>768</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnSysSet">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>400</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>设置</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnDataOut">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>240</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>输出</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnTool">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>160</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>工具</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnRunStep">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>642</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>执行</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnImage">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>80</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图像</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnCalibrat">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>320</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>标定</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnAdmin">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>484</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>登陆</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnHome">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>0</y>
+      <width>90</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>主页</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::DelayedPopup</enum>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
+   <zorder>widgetContent</zorder>
+   <zorder>btnSysSet</zorder>
+   <zorder>btnDataOut</zorder>
+   <zorder>btnTool</zorder>
+   <zorder>btnRunStep</zorder>
+   <zorder>btnImage</zorder>
+   <zorder>btnCalibrat</zorder>
+   <zorder>btnAdmin</zorder>
+   <zorder>btnHome</zorder>
+   <zorder>btnRun</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

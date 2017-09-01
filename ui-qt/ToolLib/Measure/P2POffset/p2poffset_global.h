@@ -1,0 +1,12 @@
+#ifndef P2POFFSET_GLOBAL_H
+#define P2POFFSET_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(P2POFFSET_LIBRARY)
+#  define P2POFFSETSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define P2POFFSETSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // P2POFFSET_GLOBAL_H

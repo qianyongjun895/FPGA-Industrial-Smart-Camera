@@ -1,0 +1,12 @@
+#ifndef RELATION_GLOBAL_H
+#define RELATION_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(RELATION_LIBRARY)
+#  define RELATIONSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define RELATIONSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // RELATION_GLOBAL_H

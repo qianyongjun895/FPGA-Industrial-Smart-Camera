@@ -1,0 +1,12 @@
+#ifndef LINEFLAW_GLOBAL_H
+#define LINEFLAW_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(LINEFLAW_LIBRARY)
+#  define LINEFLAWSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define LINEFLAWSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // LINEFLAW_GLOBAL_H

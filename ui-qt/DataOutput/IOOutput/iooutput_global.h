@@ -1,0 +1,12 @@
+#ifndef IOOUTPUT_GLOBAL_H
+#define IOOUTPUT_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(IOOUTPUT_LIBRARY)
+#  define IOOUTPUTSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define IOOUTPUTSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // IOOUTPUT_GLOBAL_H
